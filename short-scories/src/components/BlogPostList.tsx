@@ -1,24 +1,49 @@
 'use client'
 
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Twitter, Facebook } from 'lucide-react';
 
-export default function BlogPostList({ posts }: { posts: Post[] }) {
-  useEffect(() => {
-    const handleSpotifyResize = () => {
-      const iframes = document.querySelectorAll('iframe[src*="embed.spotify.com"]');
-      iframes.forEach((iframe: HTMLIFrameElement) => {
-        if (iframe.parentElement) {
-          iframe.style.width = iframe.parentElement.style.width;
-          iframe.src = iframe.src; // Reload iframe
-        }
-      });
-    };
+type Author = {
+  name: string;
+  url?: string;
+  profileImage?: string;
+}
 
-    window.addEventListener('resize', handleSpotifyResize);
-    return () => window.removeEventListener('resize', handleSpotifyResize);
-  }, []);
+type Tag = {
+  name: string;
+  description?: string;
+  slug: string;
+}
+
+type Post = {
+    title: string;
+    url: string;
+    content: string;
+    date: string;
+    primaryAuthor: Author;
+    primaryTag: Tag;
+    tags: Tag[];
+    featureImage?: string;
+  }
+
+
+
+export default function BlogPostList({ posts }: { posts: Post[] }) {
+  // useEffect(() => {
+  //   const handleSpotifyResize = () => {
+  //     const iframes = document.querySelectorAll('iframe[src*="embed.spotify.com"]');
+  //     iframes.forEach((iframe: HTMLIFrameElement) => {
+  //       if (iframe.parentElement) {
+  //         iframe.style.width = iframe.parentElement.style.width;
+  //         iframe.src = iframe.src; // Reload iframe
+  //       }
+  //     });
+  //   };
+
+  //   window.addEventListener('resize', handleSpotifyResize);
+  //   return () => window.removeEventListener('resize', handleSpotifyResize);
+  // }, []);
 
   return (
     <div className="space-y-8">
