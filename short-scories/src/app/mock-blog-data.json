@@ -1,0 +1,91 @@
+{
+    "posts": [
+      {
+        "title": "Midnight Jazz Sessions: A Story of Late Night Inspiration",
+        "url": "/posts/midnight-jazz-sessions",
+        "content": "In the dimly lit corners of New York's underground jazz scene, a story unfolds that captures the essence of musical spontaneity. This piece explores the intersection of traditional jazz improvisation with modern electronic elements, creating a unique sonic landscape that defies conventional genres.",
+        "date": "2024-01-15",
+        "primaryAuthor": {
+          "name": "Sarah Chen",
+          "url": "/authors/sarah-chen",
+          "profileImage": "/images/authors/sarah-chen.jpg"
+        },
+        "primaryTag": {
+          "name": "Jazz",
+          "description": "https://open.spotify.com/embed/track/2aibwv5hGXSgw7Yru8IYTO",
+          "slug": "jazz"
+        },
+        "tags": [
+          {
+            "name": "John Coltrane",
+            "description": "artist",
+            "slug": "john-coltrane"
+          },
+          {
+            "name": "Winter 2024",
+            "description": "edition",
+            "slug": "winter-2024"
+          }
+        ],
+        "featureImage": "/images/posts/jazz-session.jpg"
+      },
+      {
+        "title": "Electronic Dreamscapes: The Future of Ambient Music",
+        "url": "/posts/electronic-dreamscapes",
+        "content": "Venturing into the realm of ambient electronic music, we discover how modern producers are pushing the boundaries of sound design. Through innovative use of modular synthesizers and field recordings, these artists create immersive sonic environments that challenge our perception of musical space.",
+        "date": "2024-01-18",
+        "primaryAuthor": {
+          "name": "Marcus Rodriguez",
+          "url": "/authors/marcus-rodriguez",
+          "profileImage": "/images/authors/marcus-rodriguez.jpg"
+        },
+        "primaryTag": {
+          "name": "Electronic",
+          "description": "https://open.spotify.com/embed/track/3AzjcOeAmA57TIOr9zF1ZW",
+          "slug": "electronic"
+        },
+        "tags": [
+          {
+            "name": "Brian Eno",
+            "description": "artist",
+            "slug": "brian-eno"
+          },
+          {
+            "name": "Winter 2024",
+            "description": "edition",
+            "slug": "winter-2024"
+          }
+        ],
+        "featureImage": "/images/posts/electronic-dreams.jpg"
+      },
+      {
+        "title": "Classical Reinterpretations: A Modern Take on Bach",
+        "url": "/posts/classical-reinterpretations",
+        "content": "When classical meets contemporary, magic happens. This piece examines how modern musicians are breathing new life into Bach's compositions through innovative arrangements and unexpected instrumental combinations. The result is a fascinating blend of baroque precision and modern expression.",
+        "date": "2024-01-22",
+        "primaryAuthor": {
+          "name": "Elena Walsh",
+          "url": "/authors/elena-walsh",
+          "profileImage": "/images/authors/elena-walsh.jpg"
+        },
+        "primaryTag": {
+          "name": "Classical",
+          "description": "https://open.spotify.com/embed/track/1vCRGgD1xvyjwQ0XxB4ZIH",
+          "slug": "classical"
+        },
+        "tags": [
+          {
+            "name": "Yo-Yo Ma",
+            "description": "artist",
+            "slug": "yo-yo-ma"
+          },
+          {
+            "name": "Winter 2024",
+            "description": "edition",
+            "slug": "winter-2024"
+          }
+        ],
+        "featureImage": "/images/posts/classical-modern.jpg"
+      }
+    ]
+  }
