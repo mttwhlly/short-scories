@@ -22,6 +22,7 @@
     primaryTag: Tag;
     tags: Tag[];
     featureImage: string;
+    songUrl: string;
   }
   
   export interface Posts {

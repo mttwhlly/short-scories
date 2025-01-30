@@ -12,10 +12,10 @@ export default function BlogPostList({ data }: { data: Posts }) {
         <Card key={index} className="overflow-hidden">
           <CardContent className="p-6">
             {/* Spotify Embed */}
-            {post.primaryTag?.description && (
+            {post.songUrl && (
               <div className="mb-6">
                 <iframe
-                  src={post.primaryTag.description}
+                  src={post.songUrl}
                   className="w-full h-[152px]"
                   frameBorder="0"
                   allow="encrypted-media"
@@ -34,7 +34,7 @@ export default function BlogPostList({ data }: { data: Posts }) {
             </h2>
 
             {/* Content */}
-            <div className="prose max-w-none mb-6 font-questa-sans">{post.content}</div>
+            <div className="prose max-w-none mb-6 font-questa-sans leading-loose">{post.content}</div>
 
             {/* Credits */}
             <div className="space-y-2 text-sm text-gray-600">
