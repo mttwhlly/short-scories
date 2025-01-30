@@ -15,7 +15,7 @@ export default function Home() {
     queryKey: ['todos'],
     queryFn: async () => {
       const response = await fetch('https://strapi-dwsg4ggk0k04kww44s04s80o.mttwhlly.cc/api/articles');
-      return response.json() as Promise<Posts[]>;
+      return response.json() as Promise<Posts>;
     },
   });
 
@@ -26,7 +26,7 @@ export default function Home() {
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <Suspense fallback={<div>Loading...</div>}>
         {/* <BlogPostList posts={mockData.posts} /> */}
-        <BlogPostList data={posts} />
+        {posts && <BlogPostList data={posts} />}
       </Suspense>
     </div>
   );
