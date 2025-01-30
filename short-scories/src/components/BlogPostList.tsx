@@ -1,35 +1,11 @@
-'use client'
+"use client";
 
-// import { useEffect } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Twitter, Facebook } from 'lucide-react';
+import { useId } from 'react';
+import { Card, CardContent } from "@/components/ui/card";
+import { Twitter, Facebook } from "lucide-react";
+import { Posts } from "@/types/strapi";
 
-type Author = {
-  name: string;
-  url?: string;
-  profileImage?: string;
-}
-
-type Tag = {
-  name: string;
-  description?: string;
-  slug: string;
-}
-
-type Post = {
-    title: string;
-    url: string;
-    content: string;
-    date: string;
-    primaryAuthor: Author;
-    primaryTag: Tag;
-    tags: Tag[];
-    featureImage?: string;
-  }
-
-
-
-export default function BlogPostList({ posts }: { posts: Post[] }) {
+export default function BlogPostList({ data }: { data: Posts }) {
   // useEffect(() => {
   //   const handleSpotifyResize = () => {
   //     const iframes = document.querySelectorAll('iframe[src*="embed.spotify.com"]');
@@ -45,10 +21,11 @@ export default function BlogPostList({ posts }: { posts: Post[] }) {
   //   return () => window.removeEventListener('resize', handleSpotifyResize);
   // }, []);
 
+
   return (
     <div className="space-y-8">
-      {posts.map((post) => (
-        <Card key={post.url} className="overflow-hidden">
+      {data.data.map((post, index) => (
+        <Card key={index} className="overflow-hidden">
           <CardContent className="p-6">
             {/* Spotify Embed */}
             {post.primaryTag?.description && (
@@ -64,37 +41,48 @@ export default function BlogPostList({ posts }: { posts: Post[] }) {
 
             {/* Title */}
             <h2 className="text-2xl font-bold mb-4">
-              <a href={post.url} className="hover:text-blue-600 transition-colors">
+              <a
+                href={post.url}
+                className="hover:text-blue-600 transition-colors"
+              >
                 {post.title}
               </a>
             </h2>
 
             {/* Content */}
-            <div className="prose max-w-none mb-6">
-              {post.content}
-            </div>
+            <div className="prose max-w-none mb-6">{post.content}</div>
 
             {/* Credits */}
             <div className="space-y-2 text-sm text-gray-600">
               {post.primaryAuthor && (
-                <div>Author: <span className="font-medium">{post.primaryAuthor.name}</span></div>
+                <div>
+                  Author:{" "}
+                  <span className="font-medium">{post.primaryAuthor.name}</span>
+                </div>
               )}
 
-              {post.tags?.filter(tag => tag.description === "artist").map(tag => (
-                <div key={tag.slug}>
-                  Artist: <span className="font-medium">{tag.name}</span>
-                </div>
-              ))}
+              {post.tags
+                ?.filter((tag) => tag.description === "artist")
+                .map((tag) => (
+                  <div key={tag.slug}>
+                    Artist: <span className="font-medium">{tag.name}</span>
+                  </div>
+                ))}
 
               <div>
-                Published: <span className="font-medium">{new Date(post.date).toLocaleDateString()}</span>
+                Published:{" "}
+                <span className="font-medium">
+                  {new Date(post.date).toLocaleDateString()}
+                </span>
               </div>
 
-              {post.tags?.filter(tag => tag.description === "edition").map(tag => (
-                <div key={tag.slug}>
-                  Edition: <span className="font-medium">{tag.name}</span>
-                </div>
-              ))}
+              {post.tags
+                ?.filter((tag) => tag.description === "edition")
+                .map((tag) => (
+                  <div key={tag.slug}>
+                    Edition: <span className="font-medium">{tag.name}</span>
+                  </div>
+                ))}
 
               {/* Social Share */}
               <div className="flex gap-4 mt-4">
