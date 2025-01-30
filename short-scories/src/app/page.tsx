@@ -2,9 +2,8 @@
 
 import BlogPostList from "@/components/BlogPostList";
 // import mockData from './mock-blog-data.json';
-import { fetchStrapi } from "@/lib/api";
 import { Posts } from "@/types/strapi";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 // const initialData = await fetchStrapi("articles");

@@ -1,26 +1,10 @@
 "use client";
 
-import { useId } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Twitter, Facebook } from "lucide-react";
 import { Posts } from "@/types/strapi";
 
 export default function BlogPostList({ data }: { data: Posts }) {
-  // useEffect(() => {
-  //   const handleSpotifyResize = () => {
-  //     const iframes = document.querySelectorAll('iframe[src*="embed.spotify.com"]');
-  //     iframes.forEach((iframe: HTMLIFrameElement) => {
-  //       if (iframe.parentElement) {
-  //         iframe.style.width = iframe.parentElement.style.width;
-  //         iframe.src = iframe.src; // Reload iframe
-  //       }
-  //     });
-  //   };
-
-  //   window.addEventListener('resize', handleSpotifyResize);
-  //   return () => window.removeEventListener('resize', handleSpotifyResize);
-  // }, []);
-
 
   return (
     <div className="space-y-8">
@@ -43,14 +27,14 @@ export default function BlogPostList({ data }: { data: Posts }) {
             <h2 className="text-2xl font-bold mb-4">
               <a
                 href={post.url}
-                className="hover:text-blue-600 transition-colors"
+                className="hover:text-blue-600 transition-colors font-lydian font-normal"
               >
                 {post.title}
               </a>
             </h2>
 
             {/* Content */}
-            <div className="prose max-w-none mb-6">{post.content}</div>
+            <div className="prose max-w-none mb-6 font-questa-sans">{post.content}</div>
 
             {/* Credits */}
             <div className="space-y-2 text-sm text-gray-600">
@@ -69,12 +53,12 @@ export default function BlogPostList({ data }: { data: Posts }) {
                   </div>
                 ))}
 
-              <div>
+              {/* <div>
                 Published:{" "}
                 <span className="font-medium">
                   {new Date(post.date).toLocaleDateString()}
                 </span>
-              </div>
+              </div> */}
 
               {post.tags
                 ?.filter((tag) => tag.description === "edition")
