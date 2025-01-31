@@ -55,11 +55,11 @@ export default function RootLayout({
                                     About
                                 </a>
                             </li>
-                            <li>
+                            {/* <li>
                                 <a href="/contact" className="hover:underline">
                                     Contact
                                 </a>
-                            </li>
+                            </li> */}
                         </ul>
                     </nav>
                 </header>

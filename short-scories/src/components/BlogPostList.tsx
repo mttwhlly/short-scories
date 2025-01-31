@@ -43,7 +43,7 @@ export default function BlogPostList({ data }: { data: Posts }) {
 
                                 <div className="block lg:flex lg:flex-col text-nowrap mt-1 lg:basis-1/3">
                                     {/* Credits */}
-                                    <div className="text-sm text-gray-600 border-b border-black pb-2">
+                                    <div className="text-sm text-gray-600 border-b border-black">
                                         {/* {post.primaryAuthor && ( */}
                                         <p className="mb-4">
                                             Author: Ben Stafford
