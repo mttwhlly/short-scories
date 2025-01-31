@@ -9,7 +9,7 @@ export default function BlogPostList({ data }: { data: Posts }) {
             {data.data.map((post, index) => (
                 <Card
                     key={index}
-                    className="w-full rounded-none border-t-1 border-t-black border-b-0 border-x-0 shadow-none p-4"
+                    className="w-full rounded-none border-t-1 border-t-black border-b-0 border-x-0 shadow-none py-4"
                 >
                     <CardContent className="p-8 lg:flex lg:gap-14">
                         {/* Spotify Embed */}
@@ -33,15 +33,15 @@ export default function BlogPostList({ data }: { data: Posts }) {
                                     {post.title}
                                 </a>
                             </h2>
-                            <div className="flex flex-row justify-start gap-14">
-                                <div>
+                            <div className="flex flex-col lg:flex-row justify-start gap-8 lg:gap-14">
+                                <div className="block lg:flex basis-2/3">
                                     {/* Content */}
                                     <p className="prose max-w-none font-questa-sans leading-relaxed opacity-70 text-[17px]">
                                         {post.content}
                                     </p>
                                 </div>
 
-                                <div className="flex flex-col text-nowrap mt-1">
+                                <div className="block lg:flex lg:flex-col text-nowrap mt-1 lg:basis-1/3">
                                     {/* Credits */}
                                     <div className="text-sm text-gray-600 border-b border-black pb-2">
                                         {/* {post.primaryAuthor && ( */}
@@ -57,24 +57,24 @@ export default function BlogPostList({ data }: { data: Posts }) {
                                     </div>
                                     <br />
                                     {/* Social Share */}
-                                    <div className="mt-4">
+                                    <div>
                                         <a
                                             href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}%20https://shortscories.com${post.url}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-xs text-gray-600 border border-black rounded-full p-3"
+                                            className="text-xs border border-black rounded-full p-3 mr-3 w-12 h-12 tracking-[-1px] hover:bg-black hover:text-white"
                                         >
                                             TW
                                         </a>
 
-                                        {/* <a
+                                        <a
                                             href={`https://www.facebook.com/sharer/sharer.php?u=https://shortscories.com${post.url}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex flex-row text-sm text-gray-600"
+                                            className="text-xs border border-black rounded-full p-3 w-12 h-12 tracking-[1px] hover:bg-black hover:text-white"
                                         >
                                             FB
-                                        </a> */}
+                                        </a>
                                     </div>
                                 </div>
                             </div>

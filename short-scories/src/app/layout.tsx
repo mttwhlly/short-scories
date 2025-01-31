@@ -35,7 +35,7 @@ export default function RootLayout({
             <body
                 className={`${lydian.className} ${questa.className} antialiased max-w-5xl block mx-auto`}
             >
-                <header className="h-[190px] mb-10 p-4 pt-5">
+                <header className="h-[190px] mb-10 p-5">
                     <Image
                         priority
                         src="/logo.svg"
@@ -46,7 +46,10 @@ export default function RootLayout({
                     />
                 </header>
                 <Providers>{children}</Providers>
-                <footer></footer>
+                <footer className="text-center text-neutral-400 p-12">
+                    © 2019-{new Date().getFullYear()} Ben Stafford, Short
+                    Scories
+                </footer>
             </body>
         </html>
     )
