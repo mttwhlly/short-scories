@@ -2,6 +2,7 @@
 
 import { Card, CardContent } from '@/components/ui/card'
 import { Posts } from '@/types/strapi'
+import SpotifyIframe from './SpotifyIframe'
 
 export default function BlogPostList({ data }: { data: Posts }) {
     return (
@@ -13,16 +14,7 @@ export default function BlogPostList({ data }: { data: Posts }) {
                 >
                     <CardContent className="p-8 lg:flex lg:gap-14">
                         {/* Spotify Embed */}
-                        {post.songUrl && (
-                            <div className="mb-6">
-                                <iframe
-                                    src={post.songUrl}
-                                    className="w-full h-[80px] lg:w-[250px] lg:h-[330px]"
-                                    frameBorder="0"
-                                    allow="encrypted-media"
-                                />
-                            </div>
-                        )}
+                        {post.songUrl && <SpotifyIframe url={post.songUrl} />}
                         <div className="flex flex-col">
                             {/* Title */}
                             <h2 className="text-3xl lg:text-6xl font-bold block w-full mb-6">
