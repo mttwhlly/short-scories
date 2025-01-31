@@ -1,7 +1,6 @@
 'use client'
 
 import { Card, CardContent } from '@/components/ui/card'
-import { Twitter, Facebook } from 'lucide-react'
 import { Posts } from '@/types/strapi'
 
 export default function BlogPostList({ data }: { data: Posts }) {
@@ -12,7 +11,7 @@ export default function BlogPostList({ data }: { data: Posts }) {
                     key={index}
                     className="w-full rounded-none border-t-1 border-t-black border-b-0 border-x-0 shadow-none p-4"
                 >
-                    <CardContent className="p-4 lg:flex lg:gap-10">
+                    <CardContent className="p-8 lg:flex lg:gap-14">
                         {/* Spotify Embed */}
                         {post.songUrl && (
                             <div className="mb-6">
@@ -24,9 +23,9 @@ export default function BlogPostList({ data }: { data: Posts }) {
                                 />
                             </div>
                         )}
-                        <div>
+                        <div className="flex flex-col">
                             {/* Title */}
-                            <h2 className="text-3xl lg:text-6xl font-bold mb-4 flex flex-col">
+                            <h2 className="text-3xl lg:text-6xl font-bold block w-full mb-6">
                                 <a
                                     href={post.url}
                                     className="font-lydian font-normal hover:cursor-pointer"
@@ -34,51 +33,50 @@ export default function BlogPostList({ data }: { data: Posts }) {
                                     {post.title}
                                 </a>
                             </h2>
-
-                            {/* Content */}
-                            <p className="prose max-w-none mb-6 font-questa-sans leading-relaxed opacity-70 text-[17px]">
-                                {post.content}
-                            </p>
-
-                            {/* <div>
-                Published:{" "}
-                <span className="font-medium">
-                {new Date(post.date).toLocaleDateString()}
-                </span>
-                </div> */}
-                        </div>
-                        <div>
-                            {/* Credits */}
-                            <div className="space-y-2 text-sm text-gray-600">
-                                {/* {post.primaryAuthor && ( */}
+                            <div className="flex flex-row justify-start gap-14">
                                 <div>
-                                    Author:{' '}
-                                    <span className="font-medium">
-                                        Ben Stafford
-                                    </span>
+                                    {/* Content */}
+                                    <p className="prose max-w-none font-questa-sans leading-relaxed opacity-70 text-[17px]">
+                                        {post.content}
+                                    </p>
                                 </div>
-                                {/* )} */}
-                            </div>
-                            {/* Social Share */}
-                            <div className="flex gap-4 mt-4">
-                                <a
-                                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}%20https://shortscories.com${post.url}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-2 text-gray-600 hover:text-blue-500 transition-colors"
-                                >
-                                    <Twitter size={18} />
-                                    <span>Share on Twitter</span>
-                                </a>
-                                <a
-                                    href={`https://www.facebook.com/sharer/sharer.php?u=https://shortscories.com${post.url}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors"
-                                >
-                                    <Facebook size={18} />
-                                    <span>Share on Facebook</span>
-                                </a>
+
+                                <div className="flex flex-col text-nowrap mt-1">
+                                    {/* Credits */}
+                                    <div className="text-sm text-gray-600 border-b border-black pb-2">
+                                        {/* {post.primaryAuthor && ( */}
+                                        <p className="mb-4">
+                                            Author: Ben Stafford
+                                        </p>
+                                        {/* )} */}
+                                    </div>
+                                    <div className="text-sm text-gray-600 border-b border-black pb-2">
+                                        <p className="mt-4 mb-2">
+                                            Published: Today
+                                        </p>
+                                    </div>
+                                    <br />
+                                    {/* Social Share */}
+                                    <div className="mt-4">
+                                        <a
+                                            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}%20https://shortscories.com${post.url}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-xs text-gray-600 border border-black rounded-full p-3"
+                                        >
+                                            TW
+                                        </a>
+
+                                        {/* <a
+                                            href={`https://www.facebook.com/sharer/sharer.php?u=https://shortscories.com${post.url}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex flex-row text-sm text-gray-600"
+                                        >
+                                            FB
+                                        </a> */}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </CardContent>
