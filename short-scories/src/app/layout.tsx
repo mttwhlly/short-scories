@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import localFont from 'next/font/local'
+import Link from 'next/link'
 import './globals.css'
 import Providers from '@/lib/providers'
 
@@ -35,15 +36,32 @@ export default function RootLayout({
             <body
                 className={`${lydian.className} ${questa.className} antialiased max-w-5xl block mx-auto`}
             >
-                <header className="h-[190px] mb-10 p-5">
-                    <Image
-                        priority
-                        src="/logo.svg"
-                        alt=""
-                        width={185}
-                        height={100}
-                        unoptimized
-                    />
+                <header className="h-[190px] mb-10 p-5 flex flex-row justify-between">
+                    <Link href="/">
+                        <Image
+                            priority
+                            src="/logo.svg"
+                            alt=""
+                            width={185}
+                            height={100}
+                            unoptimized
+                            className="inline"
+                        />
+                    </Link>
+                    <nav className="text-rightf flex mr-4">
+                        <ul className="flex justify-end gap-4 mt-4 font-lydian">
+                            <li>
+                                <a href="/about" className="hover:underline">
+                                    About
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/contact" className="hover:underline">
+                                    Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </header>
                 <Providers>{children}</Providers>
                 <footer className="text-center text-neutral-400 p-12">
