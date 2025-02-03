@@ -57,8 +57,8 @@ export default {
                 sm: 'calc(var(--radius) - 4px)',
             },
             fontFamily: {
-                lydian: ['lydian', 'serif'],
-                'questa-sans': ['questa', 'sans-serif'],
+                serif: ['var(--font-lydian)'],
+                sans: ['var(--font-questa)'],
             },
         },
     },

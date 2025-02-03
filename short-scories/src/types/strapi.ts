@@ -26,3 +26,10 @@ interface Post {
 export interface Posts {
     data: Post[]
 }
+
+export type About = {
+    data: {
+        title: string
+        description: string
+    }
+}

@@ -20,7 +20,7 @@ export default function BlogPostList({ data }: { data: Posts }) {
                             <h2 className="text-3xl lg:text-6xl font-bold block w-full mb-6">
                                 <a
                                     href={post.url}
-                                    className="font-lydian font-normal hover:cursor-pointer"
+                                    className="font-serif font-normal hover:cursor-pointer"
                                 >
                                     {post.title}
                                 </a>
@@ -28,7 +28,7 @@ export default function BlogPostList({ data }: { data: Posts }) {
                             <div className="flex flex-col lg:flex-row justify-start gap-8 lg:gap-14">
                                 <div className="block lg:flex basis-2/3">
                                     {/* Content */}
-                                    <p className="prose max-w-none font-questa-sans leading-relaxed opacity-70 text-[17px]">
+                                    <p className="prose max-w-none font-sans leading-relaxed opacity-70 text-[17px]">
                                         {post.content}
                                     </p>
                                 </div>

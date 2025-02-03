@@ -6,13 +6,15 @@ import './globals.css'
 import Providers from '@/lib/providers'
 
 const lydian = localFont({
-    src: './Lydian BT.woff2',
+    src: './Lydian_BT.woff2',
     display: 'swap',
+    variable: '--font-lydian',
 })
 
 const questa = localFont({
     src: './Questa_Sans_Regular.woff2',
     display: 'swap',
+    variable: '--font-questa',
 })
 
 export const metadata: Metadata = {
@@ -34,7 +36,7 @@ export default function RootLayout({
                 ></link>
             </head>
             <body
-                className={`${lydian.className} ${questa.className} antialiased max-w-5xl block mx-auto`}
+                className={`${lydian.variable} ${questa.variable} antialiased max-w-5xl block mx-auto`}
             >
                 <header className="h-[190px] mb-10 p-5 flex flex-row justify-between">
                     <Link href="/">
@@ -49,7 +51,7 @@ export default function RootLayout({
                         />
                     </Link>
                     <nav className="text-rightf flex mr-4">
-                        <ul className="flex justify-end gap-4 mt-4 font-lydian">
+                        <ul className="flex justify-end gap-4 mt-4 font-serif">
                             <li>
                                 <a href="/about" className="hover:underline">
                                     About
