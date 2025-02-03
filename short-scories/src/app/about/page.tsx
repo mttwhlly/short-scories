@@ -1,6 +1,6 @@
 export default function About() {
     return (
-        <div className="grid-rows-[20px_1fr_20px] min-h-screen max-w-3xl block mx-auto">
+        <div className="grid-rows-[20px_1fr_20px] min-h-screen max-w-3xl block mx-auto px-8">
             <h1 className="text-3xl font-lydian text-left mb-6">About</h1>
             <p className="text-[17px] font-questa-sans leading-relaxed mb-8">
                 <span className="float-left text-7xl font-bold mr-3 -mt-1">
