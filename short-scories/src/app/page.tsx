@@ -17,7 +17,7 @@ export default function Home() {
         queryKey: ['articles'],
         queryFn: async () => {
             const response = await fetch(
-                'https://strapi-dwsg4ggk0k04kww44s04s80o.mttwhlly.cc/api/articles'
+                'https://strapi-dwsg4ggk0k04kww44s04s80o.mttwhlly.cc/api/articles?sort[0]=publishedDate:desc'
             )
             return response.json() as Promise<Posts>
         },

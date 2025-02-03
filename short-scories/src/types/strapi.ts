@@ -20,6 +20,7 @@ interface Post {
     tags: Tag[]
     featureImage: string
     songUrl: string
+    publishedDate: string
 }
 
 export interface Posts {

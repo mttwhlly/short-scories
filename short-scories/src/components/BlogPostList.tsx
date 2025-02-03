@@ -44,7 +44,15 @@ export default function BlogPostList({ data }: { data: Posts }) {
                                     </div>
                                     <div className="text-sm text-gray-600 border-b border-black pb-2">
                                         <p className="mt-4 mb-2">
-                                            Published: Today
+                                            Published:{' '}
+                                            {new Date(
+                                                post.publishedDate
+                                            ).toLocaleDateString('en-us', {
+                                                year: 'numeric',
+                                                month: 'long',
+                                                day: 'numeric',
+                                                timeZone: 'UTC',
+                                            })}
                                         </p>
                                     </div>
                                     <br />
